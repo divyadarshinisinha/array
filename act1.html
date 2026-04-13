@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            color: blue;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: monospace;
+            padding: 10px;
+            background-color: wheat;
+            border: 2px solid black;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            max-width: fit-content;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Accessing Elements Of An Array</h1>
+    <p id="demo"></p>
+    <button onclick="displayElements(event)">Display</button>
+    <script>
+
+        function displayElements(event) {
+            event.preventDefault();
+            let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+            for (let i = 0; i < fruits.length; i++) {
+                document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+                document.getElementById("demo").classList.add("highlight");
+            }
+        }
+    </script>
+</body>
+
+</html>
