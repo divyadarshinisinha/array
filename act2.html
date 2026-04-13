@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push & Pop</title>
+</head>
+<body>
+
+     <form action="">
+        <input type="number" name="number" id="numberInput">
+        <button type="button" onclick="pushNumber(event)">Push</button>
+        <button type="button" onclick="popNumber(event)">Pop</button>
+     </form>
+
+     <p id="demo"></p>
+
+     <script>
+        let stack = [];
+        function pushNumber() {
+            event.preventDefault();
+            let number = document.getElementById("numberInput").value;
+            stack.push(number);
+            document.getElementById("demo").innerHTML = "Stack: " + stack.join(", ");
+        }
+
+        function popNumber() {
+            event.preventDefault();
+            if (stack.length > 0) {
+                let poppedNumber = stack.pop();
+                document.getElementById("demo").innerHTML = "Stack: " + stack.join(", ");
+            } else {
+                document.getElementById("demo").innerHTML = "Stack is empty. Cannot pop.";
+            }
+        }
+     </script>
+
+
+    
+</body>
+</html>
